@@ -1,7 +1,7 @@
 {
   "name": "jest-test-matrix",
   "version": "1.0.0",
-  "description": "A test utility to test all combinations of inputs",
+  "description": "A small utility for Jest to test all combinations of parameters for a function at once.",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest"
