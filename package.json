@@ -2,6 +2,16 @@
   "name": "jest-test-matrix",
   "version": "1.0.0",
   "description": "A small utility for Jest to test all combinations of parameters for a function at once.",
+  "keywords": [
+    "jest",
+    "test",
+    "testing",
+    "matrix",
+    "table",
+    "truth table",
+    "snapshot",
+    "table snapshot"
+  ],
   "main": "dist/index.js",
   "scripts": {
     "test": "jest"
