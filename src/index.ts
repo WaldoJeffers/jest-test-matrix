@@ -38,10 +38,10 @@ expect.addSnapshotSerializer({
   test(value) {
     return !!value && Object.prototype.hasOwnProperty.call(value, 'origin') && value.origin === TEST_MATRIX_SYMBOL; // true
   },
-  print(value) {
+  serialize(value) {
     const { results, funcName } = value as ReturnType<typeof testMatrix>;
-    const heading = [...Object.keys(results[0].input), 'result']
-    const table = prettyTable({results, title: funcName, heading});
+    const heading = [...Object.keys(results[0].input)]
+    const table = prettyTable({results, title: funcName, heading });
     return table;
   },
 });

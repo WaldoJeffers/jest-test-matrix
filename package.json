@@ -14,7 +14,8 @@
   ],
   "main": "dist/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prepare": "tsc"
   },
   "author": "WaldoJeffers",
   "license": "MIT",

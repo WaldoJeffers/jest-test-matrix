@@ -10,7 +10,7 @@ describe('testMatrix', () => {
 
     const fn1 =  ({col1, col2, col3}: IOpts) => col1.charCodeAt(0) + col2.toString().charCodeAt(0) + col3.charCodeAt(0)
 
-    const r = 
+    const matrix = 
       testMatrix(
         fn1,
         {
@@ -19,7 +19,30 @@ describe('testMatrix', () => {
           col3: ['Δ', 'ƒ']
         },
       )
-    expect(r).toMatchSnapshot()
+    expect(matrix).toMatchSnapshot()
+  })
+
+  it('should properly serialize special values', () => {
+    expect(testMatrix(
+      ({a, b, c}) => a && b && c,
+      {
+        a: [''],
+        b: [0],
+        c: [null, undefined]
+      }
+    )).toMatchSnapshot()
+  });
+
+  it('should handle object structures', () => {
+    expect(
+      testMatrix(
+        ({fn, data}) => fn(data),
+        {
+          fn: [(data: any) => Object.keys(data).length],
+          data: [[], [0], {}, {hello: 'world'}]
+        }
+      )
+    ).toMatchSnapshot()
   })
 
 })
