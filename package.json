@@ -1,6 +1,6 @@
 {
   "name": "jest-test-matrix",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A small utility for Jest to test all combinations of parameters for a function at once.",
   "keywords": [
     "jest",
