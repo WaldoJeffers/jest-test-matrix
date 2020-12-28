@@ -19,4 +19,4 @@ it('should only allow valid payments', () => {
     balance : [50],
     status: ['active', 'locked', 'expired']
   })).toMatchSnapshot();
-})
+});

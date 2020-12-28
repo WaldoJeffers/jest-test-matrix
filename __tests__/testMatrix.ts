@@ -43,6 +43,21 @@ describe('testMatrix', () => {
         }
       )
     ).toMatchSnapshot()
+  });
+
+  it('should skip combinations identifed by the skip option', () => {
+    expect(
+      testMatrix(
+        ({a, b}: {a:number, b:number}) => a && b,
+        {
+          a: [0, 1],
+          b: [0, 1],
+        },
+        {
+          skip: ({a, b}) => a === b
+        }
+      )
+    ).toMatchSnapshot()
   })
 
 })

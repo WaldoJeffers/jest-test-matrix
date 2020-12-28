@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should only allow valid payments 1`] = `
-.-------------------------------------.
-|               canPay                |
-|-------------------------------------|
-| balance | amount | status  | result |
-|---------|--------|---------|--------|
-|      50 |     20 | active  | true   |
-|         |        | locked  | false  |
-|         |        | expired | false  |
-|         |    100 | active  | false  |
-|         |        | locked  | false  |
-|         |        | expired | false  |
-'-------------------------------------'
+.-----------------------------------.
+|              canPay               |
+|-----------------------------------|
+| balance | amount | status  |      |
+|---------|--------|---------|------|
+|      50 |     20 | active  | true |
+|         |        | locked  | false |
+|         |        | expired | false |
+|         |    100 | active  | false |
+|         |        | locked  | false |
+|         |        | expired | false |
+'-----------------------------------'
 `;

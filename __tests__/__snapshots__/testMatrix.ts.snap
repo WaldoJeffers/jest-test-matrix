@@ -52,3 +52,12 @@ exports[`testMatrix should properly serialize special values 1`] = `
 |    |   | undefined | '' |
 '-------------------------'
 `;
+
+exports[`testMatrix should skip combinations identifed by the skip option 1`] = `
+.----------.
+| a | b |  |
+|---|---|---|
+| 0 | 1 | 0 |
+| 1 | 0 | 0 |
+'----------'
+`;
