@@ -24,9 +24,10 @@ const serialize = (value: any) => {
   return value;
 }
 
-const formatRow = (row: ResultRow, previousRow: ResultRow | undefined) => {
+const formatRow = (row: ResultRow, previousRow: ResultRow | undefined, style: 'minimalist' | 'verbose') => {
   const {input, output} = row;
-  const values = previousRow ? Object.keys(input).map(key => {
+  const values = (style === 'minimalist' && previousRow !== undefined)
+  ? Object.keys(input).map(key => {
     const value = input[key]
     if (value === previousRow.input[key]){
       return '';
@@ -40,11 +41,12 @@ interface PrettyTableOpts {
   title: string;
   heading: string[];
   results: ResultRow[];
+  style?: 'minimalist' | 'verbose';
 }
 
 const prettyTable = (opts: PrettyTableOpts) => {
-  const {title, heading, results} = opts;
-  const rowMatrix = results.map((row, rowIndex) => formatRow(row, results[rowIndex - 1]));
+  const {title, heading, results, style = 'minimalist'} = opts;
+  const rowMatrix = results.map((row, rowIndex) => formatRow(row, results[rowIndex - 1], style));
   const table = new AsciiTable(title).setHeading(heading).addRowMatrix(rowMatrix);
   return table.toString()
 }

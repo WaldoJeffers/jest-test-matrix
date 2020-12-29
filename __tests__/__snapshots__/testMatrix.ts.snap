@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`testMatrix should accept different styling options 1`] = `
+.-----------.
+| a | b |   |
+|---|---|---|
+| 0 | 0 | 0 |
+| 0 | 1 | 0 |
+| 1 | 0 | 0 |
+| 1 | 1 | 1 |
+'-----------'
+`;
+
 exports[`testMatrix should generate a pretty ASCII-table snapshot when toMatchSnapshot is called 1`] = `
 .---------------------------.
 |            fn1            |

@@ -58,6 +58,21 @@ describe('testMatrix', () => {
         }
       )
     ).toMatchSnapshot()
+  });
+
+  it('should accept different styling options', () =>{
+    expect(
+      testMatrix(
+        ({a, b}: {a:number, b:number}) => a && b,
+        {
+          a: [0, 1],
+          b: [0, 1],
+        },
+        {
+          style: 'verbose'
+        }
+      )
+    ).toMatchSnapshot()
   })
 
 })
